@@ -41,6 +41,14 @@ u8 curFrameTimeIndex = 0;
 
 #include "PR/os_convert.h"
 
+ALIGNED8 static Texture replenishbob_left[] = {
+    #include "actors/replenishbob_hud/replenishbob_left.rgba16.inc.c"
+};
+
+ALIGNED8 static Texture replenishbob_right[] = {
+    #include "actors/replenishbob_hud/replenishbob_right.rgba16.inc.c"
+};
+
 #ifdef USE_PROFILER
 float profiler_get_fps();
 #else
@@ -174,6 +182,12 @@ void render_power_meter_health_segment(s16 numHealthWedges) {
  */
 void render_dl_power_meter(s16 numHealthWedges) {
     Mtx *mtx = alloc_display_list(sizeof(Mtx));
+
+    gSPDisplayList(gDisplayListHead++, dl_hud_img_begin);
+    render_multi_image(replenishbob_left, 32, 20, 32, 64, 0, 0, G_CYC_COPY);
+    render_multi_image(replenishbob_right, 64, 20, 32, 64, 0, 0, G_CYC_COPY);
+    print_text(20, 40, "rendering");
+    gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
 
     if (mtx == NULL) {
         return;

@@ -14,6 +14,7 @@
 #include "mario_step.h"
 #include "save_file.h"
 #include "rumble_init.h"
+#include "print.h"
 
 #include "config.h"
 
