@@ -176,18 +176,21 @@ void render_power_meter_health_segment(s16 numHealthWedges) {
     gDisplayListHead = tempGfxHead;
 }
 
+void render_hud_face() {
+    if (gHudDisplay.face == 5) {
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_begin);
+        render_multi_image(replenishbob_left, 32, 20, 32, 64, 0, 0, G_CYC_COPY);
+        render_multi_image(replenishbob_right, 64, 20, 32, 64, 0, 0, G_CYC_COPY);
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
+    }
+}
+
 /**
  * Renders power meter display lists.
  * That includes the "POWER" base and the colored health segment textures.
  */
 void render_dl_power_meter(s16 numHealthWedges) {
     Mtx *mtx = alloc_display_list(sizeof(Mtx));
-
-    gSPDisplayList(gDisplayListHead++, dl_hud_img_begin);
-    render_multi_image(replenishbob_left, 32, 20, 32, 64, 0, 0, G_CYC_COPY);
-    render_multi_image(replenishbob_right, 64, 20, 32, 64, 0, 0, G_CYC_COPY);
-    print_text(20, 40, "rendering");
-    gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
 
     if (mtx == NULL) {
         return;
@@ -601,6 +604,10 @@ void render_hud(void) {
 
         if (hudDisplayFlags & HUD_DISPLAY_FLAG_KEYS) {
             render_hud_keys();
+        }
+
+        if (hudDisplayFlags & HUD_DISPLAY_FLAG_FACE) {
+            render_hud_face();
         }
 
 #ifdef BREATH_METER
