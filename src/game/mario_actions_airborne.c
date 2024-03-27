@@ -366,6 +366,12 @@ u32 common_air_action_step(struct MarioState *m, u32 landAction, s32 animation, 
         case AIR_STEP_LANDED:
             if (!check_fall_damage_or_get_stuck(m, ACT_HARD_BACKWARD_GROUND_KB)) {
                 set_mario_action(m, landAction, 0);
+                if (m->health <= 768) {
+                    m->numFace = 2;
+                }
+                else {
+                    m->numFace = 0;
+                }
             }
             break;
 
@@ -629,7 +635,7 @@ s32 act_long_jump(struct MarioState *m) {
         animation = MARIO_ANIM_SLOW_LONGJUMP;
     }
 
-    m->numFace = 5;
+    m->numFace = 1;
     play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, SOUND_MARIO_YAHOO);
 
     if (m->floor->type == SURFACE_VERTICAL_WIND && m->actionState == 0) {

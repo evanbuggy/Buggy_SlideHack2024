@@ -954,6 +954,7 @@ void update_hud_values(void) {
         if (numHealthWedges > gHudDisplay.wedges) {
             play_sound(SOUND_MENU_POWER_METER, gGlobalSoundSource);
         }
+
         gHudDisplay.wedges = numHealthWedges;
 
         COND_BIT((gMarioState->hurtCounter > 0), gHudDisplay.flags, HUD_DISPLAY_FLAG_EMPHASIZE_POWER);

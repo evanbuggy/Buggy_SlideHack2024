@@ -38,16 +38,91 @@
 
 OSTime frameTimes[FRAMETIME_COUNT];
 u8 curFrameTimeIndex = 0;
+u8 faceIndex = 0;
+u8 faceFPS = 30;
 
 #include "PR/os_convert.h"
 
-ALIGNED8 static Texture replenishbob_left[] = {
-    #include "actors/replenishbob_hud/replenishbob_left.rgba16.inc.c"
+ALIGNED8 static Texture luigi_idle_0000_0[] = {
+    #include "actors/hud_face/hud_face_luigi_idle_0000_0_rgba16.inc.c"
 };
 
-ALIGNED8 static Texture replenishbob_right[] = {
-    #include "actors/replenishbob_hud/replenishbob_right.rgba16.inc.c"
+ALIGNED8 static Texture luigi_idle_0000_1[] = {
+    #include "actors/hud_face/hud_face_luigi_idle_0000_1_rgba16.inc.c"
 };
+
+ALIGNED8 static Texture luigi_idle_0001_0[] = {
+    #include "actors/hud_face/hud_face_luigi_idle_0001_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_idle_0001_1[] = {
+    #include "actors/hud_face/hud_face_luigi_idle_0001_1_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_idle_0002_0[] = {
+    #include "actors/hud_face/hud_face_luigi_idle_0002_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_idle_0002_1[] = {
+    #include "actors/hud_face/hud_face_luigi_idle_0002_1_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_speed_0000_0[] = {
+    #include "actors/hud_face/hud_face_luigi_speed_0000_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_speed_0000_1[] = {
+    #include "actors/hud_face/hud_face_luigi_speed_0000_1_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_speed_0001_0[] = {
+    #include "actors/hud_face/hud_face_luigi_speed_0001_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_speed_0001_1[] = {
+    #include "actors/hud_face/hud_face_luigi_speed_0001_1_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_speed_0002_0[] = {
+    #include "actors/hud_face/hud_face_luigi_speed_0002_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_speed_0002_1[] = {
+    #include "actors/hud_face/hud_face_luigi_speed_0002_1_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_worry_0000_0[] = {
+    #include "actors/hud_face/hud_face_luigi_worry_0000_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_worry_0000_1[] = {
+    #include "actors/hud_face/hud_face_luigi_worry_0000_1_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_worry_0001_0[] = {
+    #include "actors/hud_face/hud_face_luigi_worry_0001_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_worry_0001_1[] = {
+    #include "actors/hud_face/hud_face_luigi_worry_0001_1_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_worry_0002_0[] = {
+    #include "actors/hud_face/hud_face_luigi_worry_0002_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_worry_0002_1[] = {
+    #include "actors/hud_face/hud_face_luigi_worry_0002_1_rgba16.inc.c"
+};
+
+u8* idle_0[3] = {&luigi_idle_0000_0, &luigi_idle_0001_0, &luigi_idle_0002_0};
+u8* idle_1[3] = {&luigi_idle_0000_1, &luigi_idle_0001_1, &luigi_idle_0002_1};
+
+u8* speed_0[3] = {&luigi_speed_0000_0, &luigi_speed_0001_0, &luigi_speed_0002_0};
+u8* speed_1[3] = {&luigi_speed_0000_1, &luigi_speed_0001_1, &luigi_speed_0002_1};
+
+u8* worry_0[3] = {&luigi_worry_0000_0, &luigi_worry_0001_0, &luigi_worry_0002_0};
+u8* worry_1[3] = {&luigi_worry_0000_1, &luigi_worry_0001_1, &luigi_worry_0002_1};
 
 #ifdef USE_PROFILER
 float profiler_get_fps();
@@ -177,11 +252,45 @@ void render_power_meter_health_segment(s16 numHealthWedges) {
 }
 
 void render_hud_face() {
-    if (gHudDisplay.face == 5) {
+
+    if (gGlobalTimer % faceFPS == 0) {
+        if (faceIndex == 2) {
+            faceIndex = 0;
+        }
+        else {
+            faceIndex++;
+        }
+    }
+
+    switch (gHudDisplay.face) {
+    case 0:
+        faceFPS = 15;
         gSPDisplayList(gDisplayListHead++, dl_hud_img_begin);
-        render_multi_image(replenishbob_left, 32, 20, 32, 64, 0, 0, G_CYC_COPY);
-        render_multi_image(replenishbob_right, 64, 20, 32, 64, 0, 0, G_CYC_COPY);
+        render_multi_image(idle_0[faceIndex], 32, 20, 32, 64, 0, 0, G_CYC_COPY);
+        render_multi_image(idle_1[faceIndex], 64, 20, 32, 64, 0, 0, G_CYC_COPY);
         gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
+        break;
+    case 1:
+        faceFPS = 2;
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_begin);
+        render_multi_image(speed_0[faceIndex], 32, 20, 32, 64, 0, 0, G_CYC_COPY);
+        render_multi_image(speed_1[faceIndex], 64, 20, 32, 64, 0, 0, G_CYC_COPY);
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
+        break;
+    case 2:
+        faceFPS = 15;
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_begin);
+        render_multi_image(worry_0[faceIndex], 32, 20, 32, 64, 0, 0, G_CYC_COPY);
+        render_multi_image(worry_1[faceIndex], 64, 20, 32, 64, 0, 0, G_CYC_COPY);
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
+        break;
+    default:
+        faceFPS = 15;
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_begin);
+        render_multi_image(idle_0[faceIndex], 32, 20, 32, 64, 0, 0, G_CYC_COPY);
+        render_multi_image(idle_1[faceIndex], 64, 20, 32, 64, 0, 0, G_CYC_COPY);
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
+        break;
     }
 }
 

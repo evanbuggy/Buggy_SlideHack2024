@@ -29,3 +29,4 @@
 #include "koopa_shell/geo.inc.c"
 
 #include "replenishbob_hud/geo.inc.c"
+#include "hud_face/geo.inc.c"
