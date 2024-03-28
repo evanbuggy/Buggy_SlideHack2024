@@ -62,6 +62,7 @@ const LevelScript level_castle_grounds_entry[] = {
 		MARIO_POS(0x01, 90, -6202, -613, 0),
 		OBJECT(MODEL_CASTLE_GROUNDS_WARP_PIPE, 221, -243, -22, 0, -90, 0, (1 << 16), bhvWarpPipe),
 		OBJECT(MODEL_WOODEN_SIGNPOST, 10, -208, -440, 0, -90, 0, (1 << 16), bhvMessagePanel),
+		OBJECT(MODEL_1UP, -4348, -574, 3, 0, -90, 0, 0x00000000, bhvTextPopup),
 		OBJECT(MODEL_NONE, -5558, -365, 0, 0, 0, 0, 0x000A0000, bhvSpinAirborneWarp),
 		TERRAIN(castle_grounds_area_1_collision),
 		MACRO_OBJECTS(castle_grounds_area_1_macro_objs),

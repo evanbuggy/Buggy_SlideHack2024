@@ -43,18 +43,18 @@ const LevelScript level_pss_entry[] = {
 		WARP_NODE(0x0A, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF0, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF1, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		MARIO_POS(0x01, -180, -5221, 9328, -6553),
-		OBJECT(MODEL_NONE, -5221, 9328, -6553, 0, -180, 0, 0x000A0000, bhvSpinAirborneWarp),
+		MARIO_POS(0x01, -180, 5214, 9328, 7328),
+		OBJECT(MODEL_NONE, 5214, 9328, 7328, 0, -180, 0, 0x000A0000, bhvSpinAirborneWarp),
 		TERRAIN(pss_area_1_collision),
 		MACRO_OBJECTS(pss_area_1_macro_objs),
 		STOP_MUSIC(0),
-		TERRAIN_TYPE(TERRAIN_GRASS),
+		TERRAIN_TYPE(TERRAIN_SLIDE),
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */
 	END_AREA(),
 
 	FREE_LEVEL_POOL(),
-	MARIO_POS(0x01, -180, -5221, 9328, -6553),
+	MARIO_POS(0x01, -180, 5214, 9328, 7328),
 	CALL(0, lvl_init_or_update),
 	CALL_LOOP(1, lvl_init_or_update),
 	CLEAR_LEVEL(),

@@ -3,10 +3,7 @@
 const GeoLayout pss_area_1_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
-		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 0, 9323, 0, 90, 0, 0, pss_dl_Shape_IndexedFaceSet_001_Shape_IndexedFaceSet_475_mesh_layer_1),
-		GEO_OPEN_NODE(),
-			GEO_DISPLAY_LIST(LAYER_TRANSPARENT, pss_dl_Shape_IndexedFaceSet_001_Shape_IndexedFaceSet_475_mesh_layer_5),
-		GEO_CLOSE_NODE(),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 0, 9323, 0, 90, 0, -180, pss_dl_Shape_IndexedFaceSet_001_Shape_IndexedFaceSet_475_mesh_layer_1),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
