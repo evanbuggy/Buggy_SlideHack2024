@@ -82,3 +82,4 @@ UNUSED static const u64 binid_18 = 18;
 
 #include "replenishbob_hud/model.inc.c"
 #include "hud_face/model.inc.c"
+#include "hud_face_2/model.inc.c"

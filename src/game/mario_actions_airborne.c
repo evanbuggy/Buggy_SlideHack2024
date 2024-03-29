@@ -366,16 +366,22 @@ u32 common_air_action_step(struct MarioState *m, u32 landAction, s32 animation, 
         case AIR_STEP_LANDED:
             if (!check_fall_damage_or_get_stuck(m, ACT_HARD_BACKWARD_GROUND_KB)) {
                 set_mario_action(m, landAction, 0);
-                if (m->health <= 768) {
+                if (m->health <= 1280) {
                     m->numFace = 2;
                 }
                 else {
-                    m->numFace = 0;
+                    if (m->numCoins > 25) {
+                        m->numFace = 3;
+                    }
+                    else {
+                        m->numFace = 0;
+                    }
                 }
             }
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             set_mario_animation(m, animation);
 
             if (m->forwardVel > 16.0f) {
@@ -635,7 +641,6 @@ s32 act_long_jump(struct MarioState *m) {
         animation = MARIO_ANIM_SLOW_LONGJUMP;
     }
 
-    m->numFace = 1;
     play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, SOUND_MARIO_YAHOO);
 
     if (m->floor->type == SURFACE_VERTICAL_WIND && m->actionState == 0) {
@@ -660,10 +665,22 @@ s32 act_riding_shell_air(struct MarioState *m) {
 
     switch (perform_air_step(m, 0)) {
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                    m->numFace = 2;
+                }
+                else {
+                    if (m->numCoins > 25) {
+                    m->numFace = 3;
+                }
+                else {
+                    m->numFace = 0;
+                }
+                }
             set_mario_action(m, ACT_RIDING_SHELL_GROUND, 1);
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_set_forward_vel(m, 0.0f);
             break;
 
@@ -708,10 +725,22 @@ s32 act_twirling(struct MarioState *m) {
 
     switch (perform_air_step(m, 0)) {
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                m->numFace = 2;
+            }
+            else {
+                if (m->numCoins > 25) {
+                    m->numFace = 3;
+                }
+                else {
+                    m->numFace = 0;
+                }
+            }
             set_mario_action(m, ACT_TWIRL_LAND, 0);
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_bonk_reflection(m, FALSE);
             break;
 
@@ -757,6 +786,17 @@ s32 act_dive(struct MarioState *m) {
             break;
 
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                m->numFace = 2;
+            }
+            else {
+                if (m->numCoins > 25) {
+                    m->numFace = 3;
+                }
+                else {
+                    m->numFace = 0;
+                }
+            }
             if (should_get_stuck_in_ground(m) && m->faceAngle[0] == -DEGREES(60)) {
 #if ENABLE_RUMBLE
                 queue_rumble_data(5, 80);
@@ -775,6 +815,7 @@ s32 act_dive(struct MarioState *m) {
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_bonk_reflection(m, TRUE);
             m->faceAngle[0] = 0;
 
@@ -805,12 +846,24 @@ s32 act_air_throw(struct MarioState *m) {
 
     switch (perform_air_step(m, 0)) {
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                m->numFace = 2;
+            }
+            else {
+                if (m->numCoins > 25) {
+                    m->numFace = 3;
+                }
+                else {
+                    m->numFace = 0;
+                }
+            }
             if (!check_fall_damage_or_get_stuck(m, ACT_HARD_BACKWARD_GROUND_KB)) {
                 m->action = ACT_AIR_THROW_LAND;
             }
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_set_forward_vel(m, 0.0f);
             break;
 
@@ -832,11 +885,23 @@ s32 act_water_jump(struct MarioState *m) {
 
     switch (perform_air_step(m, AIR_STEP_CHECK_LEDGE_GRAB)) {
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                m->numFace = 2;
+            }
+            else {
+                if (m->numCoins > 25) {
+                    m->numFace = 3;
+                }
+                else {
+                    m->numFace = 0;
+                }
+            }
             set_mario_action(m, ACT_JUMP_LAND, 0);
             set_camera_mode(m->area->camera, m->area->camera->defMode, 1);
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_set_forward_vel(m, 15.0f);
             break;
 
@@ -868,11 +933,23 @@ s32 act_hold_water_jump(struct MarioState *m) {
 
     switch (perform_air_step(m, 0)) {
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                m->numFace = 2;
+            }
+            else {
+                if (m->numCoins > 25) {
+                    m->numFace = 3;
+                }
+                else {
+                    m->numFace = 0;
+                }
+            }
             set_mario_action(m, ACT_HOLD_JUMP_LAND, 0);
             set_camera_mode(m->area->camera, m->area->camera->defMode, 1);
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_set_forward_vel(m, 15.0f);
             break;
 
@@ -894,6 +971,17 @@ s32 act_steep_jump(struct MarioState *m) {
 
     switch (perform_air_step(m, 0)) {
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                m->numFace = 2;
+            }
+            else {
+                if (m->numCoins > 25) {
+                    m->numFace = 3;
+                }
+                else {
+                    m->numFace = 0;
+                }
+            }
             if (!check_fall_damage_or_get_stuck(m, ACT_HARD_BACKWARD_GROUND_KB)) {
                 m->faceAngle[0] = 0;
                 set_mario_action(m, m->forwardVel < 0.0f ? ACT_BEGIN_SLIDING : ACT_JUMP_LAND, 0);
@@ -901,6 +989,7 @@ s32 act_steep_jump(struct MarioState *m) {
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_set_forward_vel(m, 0.0f);
             break;
 
@@ -949,6 +1038,17 @@ s32 act_ground_pound(struct MarioState *m) {
 
         stepResult = perform_air_step(m, 0);
         if (stepResult == AIR_STEP_LANDED) {
+            if (m->health <= 1280) {
+                m->numFace = 2;
+            }
+            else {
+                if (m->numCoins > 25) {
+                    m->numFace = 3;
+                }
+                else {
+                    m->numFace = 0;
+                }
+            }
             if (should_get_stuck_in_ground(m)) {
 #if ENABLE_RUMBLE
                 queue_rumble_data(5, 80);
@@ -1080,6 +1180,7 @@ s32 act_crazy_box_bounce(struct MarioState *m) {
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_bonk_reflection(m, FALSE);
             break;
 
@@ -1105,6 +1206,17 @@ u32 common_air_knockback_step(struct MarioState *m, u32 landAction, u32 hardFall
             break;
 
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                m->numFace = 2;
+            }
+            else {
+                if (m->numCoins > 25) {
+                    m->numFace = 3;
+                }
+                else {
+                    m->numFace = 0;
+                }
+            }
 #if ENABLE_RUMBLE
             if (m->action != ACT_SOFT_BONK) {
                 queue_rumble_data(5, 40);
@@ -1120,6 +1232,7 @@ u32 common_air_knockback_step(struct MarioState *m, u32 landAction, u32 hardFall
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             set_mario_animation(m, MARIO_ANIM_BACKWARD_AIR_KB);
             mario_bonk_reflection(m, FALSE);
 
@@ -1262,6 +1375,7 @@ s32 act_getting_blown(struct MarioState *m) {
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             set_mario_animation(m, MARIO_ANIM_AIR_FORWARD_KB);
             mario_bonk_reflection(m, FALSE);
 
@@ -1334,11 +1448,23 @@ s32 act_forward_rollout(struct MarioState *m) {
             break;
 
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                m->numFace = 2;
+            }
+            else {
+                if (m->numCoins > 25) {
+                    m->numFace = 3;
+                }
+                else {
+                    m->numFace = 0;
+                }
+            }
             set_mario_action(m, ACT_FREEFALL_LAND_STOP, 0);
             play_mario_landing_sound(m, SOUND_ACTION_TERRAIN_LANDING);
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_set_forward_vel(m, 0.0f);
             break;
 
@@ -1375,11 +1501,23 @@ s32 act_backward_rollout(struct MarioState *m) {
             break;
 
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                m->numFace = 2;
+            }
+            else {
+                if (m->numCoins > 25) {
+                    m->numFace = 3;
+                }
+                else {
+                    m->numFace = 0;
+                }
+            }
             set_mario_action(m, ACT_FREEFALL_LAND_STOP, 0);
             play_mario_landing_sound(m, SOUND_ACTION_TERRAIN_LANDING);
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_set_forward_vel(m, 0.0f);
             break;
 
@@ -1403,6 +1541,17 @@ s32 act_butt_slide_air(struct MarioState *m) {
 
     switch (perform_air_step(m, AIR_STEP_CHECK_NONE)) {
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                m->numFace = 2;
+            }
+            else {
+                if (m->numCoins > 25) {
+                    m->numFace = 3;
+                }
+                else {
+                    m->numFace = 0;
+                }
+            }
             if (m->actionState == 0 && m->vel[1] < 0.0f && m->floor->normal.y >= COS10) {
                 m->vel[1] = -m->vel[1] / 2.0f;
                 m->actionState = 1;
@@ -1413,6 +1562,7 @@ s32 act_butt_slide_air(struct MarioState *m) {
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             if (m->vel[1] > 0.0f) {
                 m->vel[1] = 0.0f;
             }
@@ -1442,6 +1592,17 @@ s32 act_hold_butt_slide_air(struct MarioState *m) {
 
     switch (perform_air_step(m, AIR_STEP_CHECK_NONE)) {
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                    m->numFace = 2;
+                }
+                else {
+                    if (m->numCoins > 25) {
+                    m->numFace = 3;
+                    }
+                    else {
+                        m->numFace = 0;
+                    }
+                }
             if (m->actionState == ACT_STATE_BUTT_SLIDE_AIR_SMALL_BOUNCE && m->vel[1] < 0.0f && m->floor->normal.y >= COS10) {
                 m->vel[1] = -m->vel[1] / 2.0f;
                 m->actionState = 1;
@@ -1452,6 +1613,7 @@ s32 act_hold_butt_slide_air(struct MarioState *m) {
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             if (m->vel[1] > 0.0f) {
                 m->vel[1] = 0.0f;
             }
@@ -1488,6 +1650,17 @@ s32 act_lava_boost(struct MarioState *m) {
 
     switch (perform_air_step(m, 0)) {
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                    m->numFace = 2;
+                }
+                else {
+                    if (m->numCoins > 25) {
+                    m->numFace = 3;
+                    }
+                    else {
+                        m->numFace = 0;
+                    }
+                }
             if (m->floor->type == SURFACE_BURNING) {
                 m->actionState = ACT_STATE_LAVA_BOOST_HIT_LAVA;
                 if (!(m->flags & MARIO_METAL_CAP)) {
@@ -1511,6 +1684,7 @@ s32 act_lava_boost(struct MarioState *m) {
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_bonk_reflection(m, FALSE);
             break;
 
@@ -1562,6 +1736,17 @@ s32 act_slide_kick(struct MarioState *m) {
             break;
 
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                    m->numFace = 2;
+                }
+                else {
+                    if (m->numCoins > 25) {
+                    m->numFace = 3;
+                    }
+                    else {
+                        m->numFace = 0;
+                    }
+                }
             if (m->actionState == ACT_STATE_SLIDE_KICK_SLIDING && m->vel[1] < 0.0f) {
                 m->vel[1] = -m->vel[1] / 2.0f;
                 m->actionState = ACT_STATE_SLIDE_KICK_END;
@@ -1573,6 +1758,7 @@ s32 act_slide_kick(struct MarioState *m) {
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             if (m->vel[1] > 0.0f) {
                 m->vel[1] = 0.0f;
             }
@@ -1610,12 +1796,24 @@ s32 act_jump_kick(struct MarioState *m) {
 
     switch (perform_air_step(m, 0)) {
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                    m->numFace = 2;
+                }
+                else {
+                    if (m->numCoins > 25) {
+                    m->numFace = 3;
+                    }
+                    else {
+                        m->numFace = 0;
+                    }
+                }
             if (!check_fall_damage_or_get_stuck(m, ACT_HARD_BACKWARD_GROUND_KB)) {
                 set_mario_action(m, ACT_FREEFALL_LAND, 0);
             }
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_set_forward_vel(m, 0.0f);
             break;
     }
@@ -1640,6 +1838,17 @@ s32 act_shot_from_cannon(struct MarioState *m) {
             break;
 
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                    m->numFace = 2;
+                }
+                else {
+                    if (m->numCoins > 25) {
+                    m->numFace = 3;
+                    }
+                    else {
+                        m->numFace = 0;
+                    }
+                }
             set_mario_action(m, ACT_DIVE_SLIDE, 0);
             m->faceAngle[0] = 0;
             set_camera_mode(m->area->camera, m->area->camera->defMode, 1);
@@ -1649,6 +1858,7 @@ s32 act_shot_from_cannon(struct MarioState *m) {
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_set_forward_vel(m, -16.0f);
 
             m->faceAngle[0] = 0;
@@ -1735,6 +1945,17 @@ s32 act_flying(struct MarioState *m) {
             break;
 
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                    m->numFace = 2;
+                }
+                else {
+                    if (m->numCoins > 25) {
+                    m->numFace = 3;
+                    }
+                    else {
+                        m->numFace = 0;
+                    }
+                }
             set_mario_action(m, ACT_DIVE_SLIDE, 0);
 
             set_mario_animation(m, MARIO_ANIM_DIVE);
@@ -1748,6 +1969,7 @@ s32 act_flying(struct MarioState *m) {
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             if (m->wall != NULL) {
                 mario_set_forward_vel(m, -16.0f);
                 m->faceAngle[0] = 0;
@@ -1890,12 +2112,24 @@ s32 act_flying_triple_jump(struct MarioState *m) {
 
     switch (perform_air_step(m, 0)) {
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                    m->numFace = 2;
+                }
+                else {
+                    if (m->numCoins > 25) {
+                    m->numFace = 3;
+                    }
+                    else {
+                        m->numFace = 0;
+                    }
+                }
             if (!check_fall_damage_or_get_stuck(m, ACT_HARD_BACKWARD_GROUND_KB)) {
                 set_mario_action(m, ACT_DOUBLE_JUMP_LAND, 0);
             }
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_bonk_reflection(m, FALSE);
             break;
 
@@ -1938,10 +2172,22 @@ s32 act_vertical_wind(struct MarioState *m) {
 
     switch (perform_air_step(m, 0)) {
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                    m->numFace = 2;
+                }
+                else {
+                    if (m->numCoins > 25) {
+                    m->numFace = 3;
+                    }
+                    else {
+                        m->numFace = 0;
+                    }
+                }
             set_mario_action(m, ACT_DIVE_SLIDE, 0);
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_set_forward_vel(m, -16.0f);
             break;
     }
@@ -1966,6 +2212,17 @@ s32 act_special_triple_jump(struct MarioState *m) {
 
     switch (perform_air_step(m, 0)) {
         case AIR_STEP_LANDED:
+            if (m->health <= 1280) {
+                m->numFace = 2;
+            }
+            else {
+                if (m->numCoins > 25) {
+                    m->numFace = 3;
+                }
+                else {
+                    m->numFace = 0;
+                }
+            }
             if (m->actionState++ == ACT_STATE_SPECIAL_TRIPLE_JUMP_SPINNING) {
                 m->vel[1] = 42.0f;
             } else {
@@ -1975,6 +2232,7 @@ s32 act_special_triple_jump(struct MarioState *m) {
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->numFace = 5;
             mario_bonk_reflection(m, TRUE);
             break;
     }

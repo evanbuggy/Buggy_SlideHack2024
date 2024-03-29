@@ -929,6 +929,7 @@ void update_hud_values(void) {
 
                 gHudDisplay.coins++;
                 play_sound(coinSound, gMarioState->marioObj->header.gfx.cameraToObject);
+                gMarioState->numFace = 4;
             }
         }
 
@@ -946,10 +947,15 @@ void update_hud_values(void) {
             gHudDisplay.coins = MAX_NUM_COINS;
         }
 
+        if (gMarioState->forwardVel > 105) {
+            gMarioState->numFace = 1;
+        }
+
         gHudDisplay.stars = gMarioState->numStars;
         gHudDisplay.lives = gMarioState->numLives;
         gHudDisplay.keys = gMarioState->numKeys;
         gHudDisplay.face = gMarioState->numFace;
+        gHudDisplay.textID = gMarioState->textID;
 
         if (numHealthWedges > gHudDisplay.wedges) {
             play_sound(SOUND_MENU_POWER_METER, gGlobalSoundSource);

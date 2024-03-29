@@ -40,6 +40,9 @@ OSTime frameTimes[FRAMETIME_COUNT];
 u8 curFrameTimeIndex = 0;
 u8 faceIndex = 0;
 u8 faceFPS = 30;
+s16 temp;
+u8 timer = 0;
+char *text[30] = { "", "welcome...", "nice view, right?", "weeee!!", "hurry it up green man!", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "top text", "bottom text"};
 
 #include "PR/os_convert.h"
 
@@ -115,14 +118,95 @@ ALIGNED8 static Texture luigi_worry_0002_1[] = {
     #include "actors/hud_face/hud_face_luigi_worry_0002_1_rgba16.inc.c"
 };
 
-u8* idle_0[3] = {&luigi_idle_0000_0, &luigi_idle_0001_0, &luigi_idle_0002_0};
-u8* idle_1[3] = {&luigi_idle_0000_1, &luigi_idle_0001_1, &luigi_idle_0002_1};
+ALIGNED8 static Texture luigi_hurt_0000_0[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_hurt_0000_0_rgba16.inc.c"
+};
 
-u8* speed_0[3] = {&luigi_speed_0000_0, &luigi_speed_0001_0, &luigi_speed_0002_0};
-u8* speed_1[3] = {&luigi_speed_0000_1, &luigi_speed_0001_1, &luigi_speed_0002_1};
+ALIGNED8 static Texture luigi_hurt_0000_1[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_hurt_0000_1_rgba16.inc.c"
+};
 
-u8* worry_0[3] = {&luigi_worry_0000_0, &luigi_worry_0001_0, &luigi_worry_0002_0};
-u8* worry_1[3] = {&luigi_worry_0000_1, &luigi_worry_0001_1, &luigi_worry_0002_1};
+ALIGNED8 static Texture luigi_hurt_0001_0[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_hurt_0001_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_hurt_0001_1[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_hurt_0001_1_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_hurt_0002_0[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_hurt_0002_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_hurt_0002_1[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_hurt_0002_1_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_sweat_0000_0[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_sweat_0000_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_sweat_0000_1[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_sweat_0000_1_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_sweat_0001_0[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_sweat_0001_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_sweat_0001_1[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_sweat_0001_1_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_sweat_0002_0[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_sweat_0002_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_sweat_0002_1[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_sweat_0002_1_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_smile_0000_0[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_smile_0000_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_smile_0000_1[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_smile_0000_1_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_smile_0001_0[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_smile_0001_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_smile_0001_1[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_smile_0001_1_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_smile_0002_0[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_smile_0002_0_rgba16.inc.c"
+};
+
+ALIGNED8 static Texture luigi_smile_0002_1[] = {
+    #include "actors/hud_face_2/hud_face_2_luigi_smile_0002_1_rgba16.inc.c"
+};
+
+u8* idle_0[3] = {luigi_idle_0000_0, luigi_idle_0001_0, luigi_idle_0002_0};
+u8* idle_1[3] = {luigi_idle_0000_1, luigi_idle_0001_1, luigi_idle_0002_1};
+
+u8* speed_0[3] = {luigi_speed_0000_0, luigi_speed_0001_0, luigi_speed_0002_0};
+u8* speed_1[3] = {luigi_speed_0000_1, luigi_speed_0001_1, luigi_speed_0002_1};
+
+u8* worry_0[3] = {luigi_worry_0000_0, luigi_worry_0001_0, luigi_worry_0002_0};
+u8* worry_1[3] = {luigi_worry_0000_1, luigi_worry_0001_1, luigi_worry_0002_1};
+
+u8* hurt_0[3] = {luigi_hurt_0000_0, luigi_hurt_0001_0, luigi_hurt_0002_0};
+u8* hurt_1[3] = {luigi_hurt_0000_1, luigi_hurt_0001_1, luigi_hurt_0002_1};
+
+u8* smile_0[3] = {luigi_smile_0000_0, luigi_smile_0001_0, luigi_smile_0002_0};
+u8* smile_1[3] = {luigi_smile_0000_1, luigi_smile_0001_1, luigi_smile_0002_1};
+
+u8* sweat_0[3] = {luigi_sweat_0000_0, luigi_sweat_0001_0, luigi_sweat_0002_0};
+u8* sweat_1[3] = {luigi_sweat_0000_1, luigi_sweat_0001_1, luigi_sweat_0002_1};
 
 #ifdef USE_PROFILER
 float profiler_get_fps();
@@ -284,6 +368,27 @@ void render_hud_face() {
         render_multi_image(worry_1[faceIndex], 64, 20, 32, 64, 0, 0, G_CYC_COPY);
         gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
         break;
+    case 3:
+        faceFPS = 2;
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_begin);
+        render_multi_image(sweat_0[faceIndex], 32, 20, 32, 64, 0, 0, G_CYC_COPY);
+        render_multi_image(sweat_1[faceIndex], 64, 20, 32, 64, 0, 0, G_CYC_COPY);
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
+        break;
+    case 4:
+        faceFPS = 5;
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_begin);
+        render_multi_image(smile_0[faceIndex], 32, 20, 32, 64, 0, 0, G_CYC_COPY);
+        render_multi_image(smile_1[faceIndex], 64, 20, 32, 64, 0, 0, G_CYC_COPY);
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
+        break;
+    case 5:
+        faceFPS = 2;
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_begin);
+        render_multi_image(hurt_0[faceIndex], 32, 20, 32, 64, 0, 0, G_CYC_COPY);
+        render_multi_image(hurt_1[faceIndex], 64, 20, 32, 64, 0, 0, G_CYC_COPY);
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
+        break;
     default:
         faceFPS = 15;
         gSPDisplayList(gDisplayListHead++, dl_hud_img_begin);
@@ -292,6 +397,21 @@ void render_hud_face() {
         gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
         break;
     }
+}
+
+void render_text() {
+    if (gHudDisplay.textID != temp){
+        timer = 60;
+    }
+
+    if (timer > 0) {
+        print_text(10 + timer % 3, 10 + timer % 3, text[gHudDisplay.textID]);
+        if (gHudDisplay.textID >= 15) {
+            print_text(10 + timer % 3, 30 + timer % 3, text[gHudDisplay.textID - 1]);
+        }
+        timer--;
+    }
+    temp = gHudDisplay.textID;
 }
 
 /**
@@ -717,6 +837,10 @@ void render_hud(void) {
 
         if (hudDisplayFlags & HUD_DISPLAY_FLAG_FACE) {
             render_hud_face();
+        }
+
+        if (hudDisplayFlags & HUD_DISPLAY_FLAG_FACE) {
+            render_text();
         }
 
 #ifdef BREATH_METER

@@ -30,3 +30,4 @@
 
 #include "replenishbob_hud/geo.inc.c"
 #include "hud_face/geo.inc.c"
+#include "hud_face_2/geo.inc.c"

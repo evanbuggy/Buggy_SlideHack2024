@@ -6081,7 +6081,7 @@ const BehaviorScript bhvIntroScene[] = {
 const BehaviorScript bhvTextPopup[] = {
     BEGIN(OBJ_LIST_GENACTOR),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-    SET_HITBOX_WITH_OFFSET(100, 100, 0),
+    SET_HITBOX_WITH_OFFSET(1000, 1000, 0),
     BEGIN_LOOP(),
         SET_INT(oIntangibleTimer, 0),
         CALL_NATIVE(bhv_text_popup),
