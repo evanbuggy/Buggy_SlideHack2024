@@ -116,18 +116,29 @@ Here you go--you've won\n\
 it, fair and square!"))
 
 DEFINE_DIALOG(DIALOG_008, 1, 4, 30, 200, _("\
-BEWARE OF CHAIN CHOMP\n\
-Extreme Danger!\n\
-Get close and press [C]^\n\
-for a better look.\n\
-Scary, huh?\n\
-See the Red Coin on top\n\
-of the stake?\n\
+CONFIDENTIAL!\n\
+Top secret entrance to\n\
+Princess Toadstool's\n\
+secret slide.\n\
+GREEN-CLAD PLUMBERS\n\
+NOT PERMITTED! Handsome\n\
+red ones are allowed on\n\
+some special occassions.\n\
+This state-of-the-art\n\
+slide was designed with\n\
+speed and efficiency in\n\
+mind.\n\
+It is NOT a toy! It's\n\
+purpose is for \n\
+Bowser-esque emergencies.\n\
 \n\
-When you collect eight of\n\
-them, a Power Star will\n\
-appear in the meadow\n\
-across the bridge."))
+It is by her majesty's\n\
+order the slide not\n\
+be for recreational use.\n\
+\n\
+...unless she thinks it\n\
+would be really really\n\
+fun."))
 
 DEFINE_DIALOG(DIALOG_009, 1, 5, 30, 200, _("\
 Long time, no see! Wow,\n\
@@ -202,14 +213,21 @@ Do you want to Save?\n\
 //You Bet//Not Now"))
 
 DEFINE_DIALOG(DIALOG_015, 1, 4, 30, 200, _("\
-You can punch enemies to\n\
-knock them down. Press [A]\n\
-to jump, [B] to punch.\n\
-Press [A] then [B] to Kick.\n\
-To pick something up,\n\
-press [B], too. To throw\n\
-something you're holding,\n\
-press [B] again."))
+Nice job getting up here!\n\
+Looks like you really are\n\
+trying to see the better\n\
+side of yourself.\n\
+Things are very off, even\n\
+if it's hard for you to\n\
+see. But there's no shame\n\
+in our times of weakness.\n\
+I can't tell you that enough.\n\
+When you realise your ways,\n\
+there is no reason to confine\n\
+yourself to this again.\n\
+Keep it up!\n\
+\n\
+- Big bro"))
 
 DEFINE_DIALOG(DIALOG_016, 1, 3, 30, 200, _("\
 Hop on the shiny shell and\n\
@@ -243,14 +261,51 @@ this royal turf? I think\n\
 that you cannot!"))
 
 DEFINE_DIALOG(DIALOG_018, 1, 4, 30, 200, _("\
-I'm sleeping because...\n\
-...I'm sleepy. I don't\n\
-like being disturbed.\n\
-Please walk quietly."))
+NEW NEW NEW NEW!!!\n\
+THE BESTEST SLIDE\n\
+IN MUSHROOMS KINGDOM!\n\
+THE GREEN ESCAPE!!!\n\
+Get coins! GET PAID!\n\
+Beautiful green greenery!\n\
+Greener than the blue sky!\n\
+More fun? Go funner!\n\
+No red... not allowed!!!\n\
+Go on it, before I change\n\
+my mind!!!! You freakin'\n\
+genius!\n\
+It is written only Luigi\n\
+can defeat Bowser.\n\
+\n\
+\n\
+ENUM DIALOG-IDS NOT\n\
+FOUND????? YOU CAN\n\
+SHIT MY ASS"))
 
-DEFINE_DIALOG(DIALOG_019, 1, 2, 30, 200, _("\
-Shhh! Please walk\n\
-quietly in the hallway!"))
+DEFINE_DIALOG(DIALOG_019, 1, 5, 30, 200, _("\
+Luig, the intrepid\n\
+explorer! like how we\n\
+always knew you! I know\n\
+it's tough to get here,\n\
+but I assure you...\n\
+Stuff like this is worth\n\
+it lil' bro. If you want\n\
+to further yourself even\n\
+more, I advise you take a\n\
+slip between the cracks.\n\
+It's scary but you might\n\
+see some beautiful things,\n\
+things you didn't know \n\
+were a part of you.\n\
+\n\
+You've built yourself\n\
+a jail, and it can only\n\
+be up to you to escape\n\
+it!\n\
+\n\
+I believe in you bro!\n\
+\n\
+\n\
+- Big Bro"))
 
 DEFINE_DIALOG(DIALOG_020, 1, 6, 95, 150, _("\
 Dear Mario:\n\

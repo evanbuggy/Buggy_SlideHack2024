@@ -42,7 +42,7 @@ u8 faceIndex = 0;
 u8 faceFPS = 30;
 s16 temp;
 u8 timer = 0;
-char *text[30] = { "", "welcome...", "nice view, right?", "weeee!!", "hurry it up green man!", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "top text", "bottom text"};
+char *text[30] = { "", "welcome...", "nice view right?", "well looky here!", "what a crap slide!", "hurry up green man!", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "its lucky we made a", "way better one!"};
 
 #include "PR/os_convert.h"
 
