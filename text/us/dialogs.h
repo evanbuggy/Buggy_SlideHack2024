@@ -221,9 +221,9 @@ Things are very off, even\n\
 if it's hard for you to\n\
 see. But there's no shame\n\
 in our times of weakness.\n\
-I can't tell you that enough.\n\
-When you realise your ways,\n\
-there is no reason to confine\n\
+I can't tell you enough.\n\
+When you see your ways,\n\
+there's no reason to keep\n\
 yourself to this again.\n\
 Keep it up!\n\
 \n\

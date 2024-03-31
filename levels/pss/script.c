@@ -48,7 +48,7 @@ const LevelScript level_pss_entry[] = {
 		OBJECT(MODEL_NONE, 5139, 9240, 5196, 0, 0, 0, 0x00000000, bhvCoinFormation),
 		OBJECT(MODEL_NONE, 5139, 8195, -773, 0, 0, 0, 0x00000000, bhvCoinFormation),
 		OBJECT(MODEL_NONE, -3617, 5796, -1389, 0, 0, 0, 0x00000000, bhvCoinFormation),
-		OBJECT(MODEL_WOODEN_SIGNPOST, 3246, 1081, 1085, 0, 0, 0, (15 << 16), bhvMessagePanel),
+		OBJECT(MODEL_WOODEN_SIGNPOST, 3246, -616, 1057, 0, 0, 0, (15 << 16), bhvMessagePanel),
 		MARIO_POS(0x01, -180, 5214, 9328, 7328),
 		OBJECT(MODEL_NONE, 5182, 9240, 7324, 0, 0, 0, (3 << 16), bhvTextPopup),
 		OBJECT(MODEL_NONE, 5139, 9335, 4071, 0, 0, 0, (4 << 16), bhvTextPopup),

@@ -191,16 +191,16 @@
  * File Select Text
  */
 // Main Screens
-#define TEXT_MARIO _("MARIO") // View Score Menu
-#define TEXT_SELECT_FILE _("SELECT FILE")
-#define TEXT_CHECK_FILE _("CHECK FILE")
-#define TEXT_COPY_FILE _("COPY FILE")
-#define TEXT_ERASE_FILE _("ERASE FILE")
+#define TEXT_MARIO _("LUIGI") // View Score Menu
+#define TEXT_SELECT_FILE _("PICK SUMTHIN")
+#define TEXT_CHECK_FILE _("CHECK IT")
+#define TEXT_COPY_FILE _("COPY IT")
+#define TEXT_ERASE_FILE _("ERASE IT")
 #define TEXT_SOUND_SELECT _("SOUND SELECT")
-#define TEXT_FILE_MARIO_A _("MARIO A")
-#define TEXT_FILE_MARIO_B _("MARIO B")
-#define TEXT_FILE_MARIO_C _("MARIO C")
-#define TEXT_FILE_MARIO_D _("MARIO D")
+#define TEXT_FILE_MARIO_A _("LUIGI A")
+#define TEXT_FILE_MARIO_B _("LUIGI B")
+#define TEXT_FILE_MARIO_C _("LUIGI C")
+#define TEXT_FILE_MARIO_D _("LUIGI D")
 
 // Menu Options
 #define TEXT_SCORE _("SCORE")
