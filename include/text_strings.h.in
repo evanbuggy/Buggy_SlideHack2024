@@ -76,7 +76,7 @@
 #define TEXT_4DASHES _("----") // Used in Score File Menu
 
 // Ingame Menu
-#define TEXT_PAUSE _("PAUSE") // Pause text, Castle Courses
+#define TEXT_PAUSE _("HOLD UP") // Pause text, Castle Courses
 #define TEXT_HUD_CONGRATULATIONS _("CONGRATULATIONS") // Course Complete Text, Bowser Courses
 
 //Widescreen stuff
@@ -214,7 +214,7 @@
 
 // Misc Menu Text
 #define TEXT_SAVED_DATA_EXISTS _("SAVED DATA EXITS") // Misspell
-#define TEXT_NO_SAVED_DATA_EXISTS _("NO SAVED DATA EXISTS")
+#define TEXT_NO_SAVED_DATA_EXISTS _("NAH BRUH")
 
 // Inside a Menu
 #define TEXT_RETURN _("RETURN")
@@ -248,8 +248,8 @@
 // Main Courses
 #define TEXT_COURSE _("COURSE")
 #define TEXT_MYSCORE _("MYSCORE")
-#define TEXT_CONTINUE _("CONTINUE")
-#define TEXT_EXIT_COURSE _("EXIT COURSE")
+#define TEXT_CONTINUE _("WE'RE SO BACK")
+#define TEXT_EXIT_COURSE _("IT'S SO OVER")
 #ifndef VERSION_EU // "R" text is different in EU
 #define TEXT_CAMERA_ANGLE_R _("SET CAMERA ANGLE WITH R")
 #endif
@@ -470,11 +470,11 @@
 #define TEXT_MENU_BITDW _("   BOWSER IN THE DARK WORLD")
 #define TEXT_MENU_BITFS _("   BOWSER IN THE FIRE SEA")
 #define TEXT_MENU_BITS _("   BOWSER IN THE SKY")
-#define TEXT_MENU_PSS _("   THE PRINCESS'S SECRET SLIDE")
+#define TEXT_MENU_PSS _("   THE PRINCESS'S SECRET SLIDE?")
 #define TEXT_MENU_COTMC _("   CAVERN OF THE METAL CAP")
 #define TEXT_MENU_TOTWC _("   TOWER OF THE WING CAP")
 #define TEXT_MENU_VCUTM _("   VANISH CAP UNDER THE MOAT")
-#define TEXT_MENU_WMOTR _("   WING MARIO OVER THE RAINBOW")
+#define TEXT_MENU_WMOTR _("   THE GREEN ESCAPE")
 #define TEXT_MENU_SA _("   THE SECRET AQUARIUM")
 #define TEXT_MENU_NONE _("")
 #define TEXT_MENU_STARS _("   CASTLE SECRET STARS")

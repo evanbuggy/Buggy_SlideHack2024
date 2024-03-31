@@ -53,6 +53,7 @@ const GeoLayout wmotr_area_1_geo[] = {
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, -12109, 8052, 7540, 90, 0, 0, wmotr_dl_DrawCall_76_003_mesh_layer_4),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, -12823, 8131, 5394, 90, 0, -34, wmotr_dl_DrawCall_76_004_mesh_layer_4),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 3476, 6521, 32, 115, 0, -34, wmotr_dl_DrawCall_76_005_mesh_layer_4),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, -12668, 2404, 14728, 90, 0, -34, wmotr_dl_DrawCall_76_006_mesh_layer_4),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -6817, 558, -9789, -90, 0, 0, wmotr_dl_painting_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -8706, 558, -9789, -90, 0, 0, wmotr_dl_painting_001_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -8706, 558, -14007, -90, 0, -180, wmotr_dl_painting_002_mesh_layer_1),

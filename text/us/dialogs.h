@@ -212,22 +212,31 @@ Do you want to Save?\n\
 \n\
 //You Bet//Not Now"))
 
-DEFINE_DIALOG(DIALOG_015, 1, 4, 30, 200, _("\
-Nice job getting up here!\n\
-Looks like you really are\n\
-trying to see the better\n\
-side of yourself.\n\
-Things are very off, even\n\
-if it's hard for you to\n\
-see. But there's no shame\n\
-in our times of weakness.\n\
-I can't tell you enough.\n\
-When you see your ways,\n\
-there's no reason to keep\n\
-yourself to this again.\n\
-Keep it up!\n\
+DEFINE_DIALOG(DIALOG_015, 1, 5, 30, 200, _("\
+  - TALES FROM THE -\n\
+  -     CASTLE      -\n\
+...............................\n\
 \n\
-- Big bro"))
+\n\
+Another day, another cake\n\
+cooked to perfection for\n\
+the plumber in red.\n\
+Does he not get bored\n\
+Of the same flavors?\n\
+Scraping for the mere\n\
+morsels at the end of\n\
+the plate, he and the\n\
+princess conjure\n\
+another scheme.\n\
+The scheme being to foil\n\
+THE GREAT LUIGI ONCE\n\
+AGAIN! But the eternal\n\
+understudy will have\n\
+his day of vengeance!\n\
+Follow our green hero\n\
+as he searches for\n\
+justice in a world of\n\
+underappreciation!"))
 
 DEFINE_DIALOG(DIALOG_016, 1, 3, 30, 200, _("\
 Hop on the shiny shell and\n\
@@ -274,38 +283,16 @@ Go on it, before I change\n\
 my mind!!!! You freakin'\n\
 genius!\n\
 It is written only Luigi\n\
-can defeat Bowser.\n\
-\n\
-\n\
-ENUM DIALOG-IDS NOT\n\
-FOUND????? YOU CAN\n\
-SHIT MY ASS"))
+can defeat Bowser. Oh\n\
+boy! I can't wait to\n\
+stomp some koopas!"))
 
 DEFINE_DIALOG(DIALOG_019, 1, 5, 30, 200, _("\
-Luig, the intrepid\n\
-explorer! like how we\n\
-always knew you! I know\n\
-it's tough to get here,\n\
-but I assure you...\n\
-Stuff like this is worth\n\
-it lil' bro. If you want\n\
-to further yourself even\n\
-more, I advise you take a\n\
-slip between the cracks.\n\
-It's scary but you might\n\
-see some beautiful things,\n\
-things you didn't know \n\
-were a part of you.\n\
-\n\
-You've built yourself\n\
-a jail, and it can only\n\
-be up to you to escape\n\
-it!\n\
-\n\
-I believe in you bro!\n\
-\n\
-\n\
-- Big Bro"))
+Take a slip through the\n\
+cracks, even if it looks\n\
+like the death plane\n\
+itself. Look inwards and\n\
+only then outwards!"))
 
 DEFINE_DIALOG(DIALOG_020, 1, 6, 95, 150, _("\
 Dear Mario:\n\
@@ -428,7 +415,7 @@ the exit, but getting\n\
 the path!"))
 
 DEFINE_DIALOG(DIALOG_033, 1, 6, 30, 200, _("\
-AW, AS WIDDLE OL'\n\
+AW, HAS WIDDLE OL'\n\
 LUIGI FALLEN DOWN?\n\
 Stand inbetween the\n\
 candles on the cake to\n\
@@ -546,7 +533,7 @@ WHAT, YA WANTIN' TO\n\
 LEAVE????\n\
 \n\
 STAND SMACK BANG IN\n\
-THE MIDDLE OF THE
+THE MIDDLE OF THE\n\
 CARPET.\n\
 SEE WHERE IT TAKES\n\
 YOU!!!!!!!!!!"))
@@ -561,22 +548,49 @@ Quick.\n\
 Better luck next time!"))
 
 DEFINE_DIALOG(DIALOG_042, 1, 4, 30, 200, _("\
-Caution! Narrow Bridge!\n\
-Cross slowly!\n\
+The author's note:\n\
 \n\
 \n\
-You can jump to the edge\n\
-of the cliff and hang on,\n\
-and you can climb off the\n\
-edge if you move slowly.\n\
-When you want to let go,\n\
-either press [Z] or press\n\
-the Control Stick in the\n\
-direction of Mario's back.\n\
-To climb up, press Up on\n\
-the Control Stick. To\n\
-scurry up quickly, press\n\
-the [A] Button."))
+\n\
+Once you enter this pipe,\n\
+the hack will be over. I\n\
+hope you have enjoyed!\n\
+\n\
+This hack was created for\n\
+the 2024 Slide themed\n\
+ROMHACKING.COM contest.\n\
+\n\
+I want to give thanks to\n\
+Simpleflips, who I have\n\
+been a fan of for 7 years\n\
+now.\n\
+2 of the paintings were\n\
+created with love by\n\
+Gingeriyo on Twitter.\n\
+\n\
+The file select theme\n\
+was produced by my good\n\
+friend Torodicus, check\n\
+out their music!\n\
+And the main level's\n\
+music is unashamedly\n\
+World Wide Noise by\n\
+ClascyJitto.\n\
+The rest was all done by\n\
+me with blood, tears but\n\
+mainly sweat over 7 days\n\
+(I was a bit late...)\n\
+While you only need 60\n\
+coins for completion,\n\
+I hope you got to check\n\
+out all the cool details.\n\
+But I hope everyone\n\
+at least enhjoyed some\n\
+of my work. Peace!\n\
+\n\
+\n\
+\n\
+- Buggy"))
 
 DEFINE_DIALOG(DIALOG_043, 1, 5, 30, 200, _("\
 If you jump and hold the\n\
