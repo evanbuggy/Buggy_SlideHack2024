@@ -406,33 +406,34 @@ the winner of the race.\n\
 Congrats, Mario!"))
 
 DEFINE_DIALOG(DIALOG_032, 1, 5, 30, 200, _("\
-If you get the Wing Cap,\n\
-you can fly! Put the cap\n\
-on, then do a Triple\n\
-Jump--jump three times\n\
-in a row--to take off.\n\
-You can fly even higher\n\
-if you blast out of a\n\
-cannon wearing the\n\
-Wing Cap!\n\
-\n\
-Use the [C] Buttons to look\n\
-around while flying, and\n\
-press [Z] to land."))
+THE HERO ARRIVES IN\n\
+SHINY GREEN OVERALLS!\n\
+Want to know how to\n\
+slide? Just press the\n\
+slide button.\n\
+There is no slide\n\
+button? Not my fault\n\
+that your controller is\n\
+faulty! Just hold up\n\
+instead then.\n\
+You must reap the\n\
+rewards! Get 60 coins\n\
+to escape! When you're\n\
+done, escape at the\n\
+foot of the tower.\n\
+There's a big metal\n\
+box that's blocking\n\
+the exit, but getting\n\
+60 coins will clear\n\
+the path!"))
 
 DEFINE_DIALOG(DIALOG_033, 1, 6, 30, 200, _("\
-Ciao! You've reached\n\
-Princess Toadstool's\n\
-castle via a warp pipe.\n\
-Using the controller is a\n\
-piece of cake. Press [A] to\n\
-jump and [B] to attack.\n\
-Press [B] to read signs,\n\
-too. Use the Control Stick\n\
-in the center of the\n\
-controller to move Mario\n\
-around. Now, head for\n\
-the castle."))
+AW, AS WIDDLE OL'\n\
+LUIGI FALLEN DOWN?\n\
+Stand inbetween the\n\
+candles on the cake to\n\
+teleport back to the start,\n\
+you wuss."))
 
 DEFINE_DIALOG(DIALOG_034, 1, 6, 30, 200, _("\
 Good afternoon. The\n\
@@ -470,26 +471,22 @@ this has been the\n\
 Lakitu Bros."))
 
 DEFINE_DIALOG(DIALOG_035, 1, 5, 30, 200, _("\
-There are four camera, or\n\
-『[C],』 Buttons. Press [C]^\n\
-to look around using the\n\
-Control Stick.\n\
+Congratulations!\n\
+You have unlocked Luigi!\n\
 \n\
-You'll usually see Mario\n\
-through Lakitu's camera.\n\
-It is the camera\n\
-recommended for normal\n\
-play.\n\
-You can change angles by\n\
-pressing [C]>. If you press\n\
-[R], the view switches to\n\
-Mario's camera, which\n\
-is directly behind him.\n\
-Press [R] again to return\n\
-to Lakitu's camera. Press\n\
-[C]| to see Mario from\n\
-afar, using either\n\
-Lakitu's or Mario's view."))
+\n\
+\n\
+Congratulations!\n\
+You have unlocked Luigi!\n\
+\n\
+\n\
+\n\
+Congratulations!\n\
+You have unlocked Luigi!\n\
+\n\
+\n\
+\n\
+Congratulations."))
 
 DEFINE_DIALOG(DIALOG_036, 1, 5, 30, 200, _("\
 OBSERVATION PLATFORM\n\
@@ -542,9 +539,17 @@ course.\n\
 //--The Big Bob-omb"))
 
 DEFINE_DIALOG(DIALOG_040, 1, 3, 30, 200, _("\
-Warning!\n\
-Cold, Cold Crevasse\n\
-Below!"))
+...\n\
+\n\
+\n\
+WHAT, YA WANTIN' TO\n\
+LEAVE????\n\
+\n\
+STAND SMACK BANG IN\n\
+THE MIDDLE OF THE
+CARPET.\n\
+SEE WHERE IT TAKES\n\
+YOU!!!!!!!!!!"))
 
 DEFINE_DIALOG(DIALOG_041, 1, 3, 30, 200, _("\
 I win! You lose!\n\

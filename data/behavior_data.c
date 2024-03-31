@@ -6087,3 +6087,15 @@ const BehaviorScript bhvTextPopup[] = {
         CALL_NATIVE(bhv_text_popup),
     END_LOOP(),
 };
+
+extern void bhv_coin_gate();
+const BehaviorScript bhvCoinGate[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    LOAD_COLLISION_DATA(metal_box_seg8_collision_08024C28),
+    SET_FLOAT(oDrawingDistance, 20000),
+    BEGIN_LOOP(),
+        CALL_NATIVE(load_object_collision_model),
+        CALL_NATIVE(bhv_coin_gate),
+    END_LOOP(),
+};
