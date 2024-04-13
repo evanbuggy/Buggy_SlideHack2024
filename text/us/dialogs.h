@@ -417,10 +417,10 @@ the path!"))
 DEFINE_DIALOG(DIALOG_033, 1, 6, 30, 200, _("\
 AW, HAS WIDDLE OL'\n\
 LUIGI FALLEN DOWN?\n\
-Stand inbetween the\n\
-candles on the cake to\n\
+Stand on the ugly lookin'\n\
+glyph of yourself to\n\
 teleport back to the start,\n\
-you wuss."))
+you narcissist."))
 
 DEFINE_DIALOG(DIALOG_034, 1, 6, 30, 200, _("\
 Good afternoon. The\n\
@@ -1628,35 +1628,33 @@ disqualified! Next time,\n\
 play fair!"))
 
 DEFINE_DIALOG(DIALOG_133, 1, 6, 30, 200, _("\
-Am I glad to see you! The\n\
-Princess...and I...and,\n\
-well, everybody...we're all\n\
-trapped inside the castle\n\
-walls.\n\
-\n\
-Bowser has stolen the\n\
-castle's Stars, and he's\n\
-using their power to\n\
-create his own world in\n\
-the paintings and walls.\n\
-\n\
-Please recover the Power\n\
-Stars! As you find them,\n\
-you can use their power\n\
-to open the doors that\n\
-Bowser has sealed.\n\
-\n\
-There are four rooms on\n\
-the first floor. Start in\n\
-the one with the painting\n\
-of Bob-omb inside. It's\n\
-the only room that Bowser\n\
-hasn't sealed.\n\
-When you collect eight\n\
-Power Stars, you'll be\n\
-able to open the door\n\
-with the big star. The\n\
-Princess must be inside!"))
+Oh, Luigi! Are we happy\n\
+to see you! We need your\n\
+help! I don't know what\n\
+we need help with, but\n\
+it's probably something\n\
+only you can do!\n\
+We much rather have you\n\
+here than your brother!\n\
+A nice change of pace,\n\
+I personally think! It's\n\
+finally time someone\n\
+stood up to that guy!\n\
+Always getting that\n\
+cake made for him, and\n\
+for what? Saving Peach\n\
+again? How unoriginal!\n\
+A one-trick pony! How\n\
+is he not sick of it?\n\
+I'd bet that I'd get\n\
+tired of having to eat\n\
+that raspberry infused\n\
+double coated frosting\n\
+topped passionfruit zest\n\
+cream filled velvet cake!\n\
+So we believe in you Luigi!\n\
+Go show red guy how it's\n\
+really done!"))
 
 DEFINE_DIALOG(DIALOG_134, 1, 5, 30, 200, _("\
 The names of the Stars\n\
@@ -1698,48 +1696,52 @@ the Stars you recovered\n\
 from them."))
 
 DEFINE_DIALOG(DIALOG_136, 1, 6, 30, 200, _("\
-Wow! You've already\n\
-recovered that many\n\
-Stars? Way to go, Mario!\n\
-I'll bet you'll have us out\n\
-of here in no time!\n\
-\n\
-Be careful, though.\n\
-Bowser and his band\n\
-wrote the book on 『bad.』\n\
-Take my advice: When you\n\
-need to recover from\n\
-injuries, collect coins.\n\
-Yellow Coins refill one\n\
-piece of the Power Meter,\n\
-Red Coins refill two\n\
-pieces, and Blue Coins\n\
-refill five.\n\
-\n\
-To make Blue Coins\n\
-appear, pound on Blue\n\
-Coin Blocks.\n\
+Oh my... Is that...\n\
+L-L-L-L-Luigi!?\n\
+WOW!!! You're like, my\n\
+freakin' idol, dude!\n\
+I've always preferred\n\
+you over your bro!\n\
+Talk about overrated! I\n\
+can't even imagine a man\n\
+in red tackling all\n\
+those haunted mansions!\n\
 \n\
 \n\
-\n\
-Also, if you fall from\n\
-high places, you'll\n\
-minimize damage if you\n\
-Pound the Ground as you\n\
-land."))
+In my opinion, I think\n\
+you should have just\n\
+left that painting of him\n\
+there, poor Mario would\n\
+have to fend for himself\n\
+against those ghosts!\n\
+Maybe then he'd FINALLY\n\
+get it! He'd finally\n\
+go through all the\n\
+hardships and challenges\n\
+a real man like yourself\n\
+endures!\n\
+I would ask for an\n\
+autograph, but you're\n\
+probably way too busy\n\
+being a better brother\n\
+to have time for it!"))
 
 DEFINE_DIALOG(DIALOG_137, 1, 6, 30, 200, _("\
-Thanks, Mario! The castle\n\
-is recovering its energy\n\
-as you retrieve Power\n\
-Stars, and you've chased\n\
-Bowser right out of here,\n\
-on to some area ahead.\n\
-Oh, by the by, are you\n\
-collecting coins? Special\n\
-Stars appear when you\n\
-collect 100 coins in each\n\
-of the 15 courses!"))
+Weegeemeister! The Green\n\
+Thunder! How is the big\n\
+guy doing? I've recently\n\
+filed all the paperwork\n\
+for your next fanclub!\n\
+\n\
+...What? Mario fanclub?\n\
+No, not at all, this is\n\
+only for you, Master\n\
+Green! I would never be\n\
+part of such a heretic\n\
+organisation!\n\
+H-hey! What's with that\n\
+face? Please quit looking\n\
+at me like that!"))
 
 DEFINE_DIALOG(DIALOG_138, 1, 3, 30, 200, _("\
 Down: Underground Lake\n\
